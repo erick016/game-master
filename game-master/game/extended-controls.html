@@ -1,0 +1,93 @@
+﻿<html>
+<head>
+    <title>Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="lib/Tangle-0.1.0/TangleKit/TangleKit.css" rel="stylesheet" />
+    <link href="css/controls.css" rel="stylesheet" />
+    <script src="lib/easeljs-0.6.0/easeljs-0.6.0.min.js"> </script>
+    <script src="lib/Tangle-0.1.0/Tangle.js"> </script>
+    <script src="lib/Tangle-0.1.0/TangleKit/TangleKit.js"> </script>
+    <script src="lib/Tangle-0.1.0/TangleKit/mootools.js"> </script>
+    <script src="lib/Tangle-0.1.0/TangleKit/BVTouchable.js"> </script>
+    <script src="lib/jquery-1.10.1/jquery-1.10.1.min.js"> </script>
+    <script src="lib/bootstrap/bootstrap.js"> </script>
+    <script src="tangle-extensions.js"> </script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-42181966-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+    <div class="span12 row-fluid" style="margin-left: 0">
+        <canvas id='c'></canvas>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span8" style="padding: 1%">
+
+            <span id="board">The board is <span data-var="boardSize" data-values="small medium huge" class="DragText"></span>.
+            </span>
+
+            <span id="player">The angel flies <span data-var="playerAgility" data-values="slowly normally quickly"
+                class="DragText"></span>.
+            </span>
+
+            <span id="platforms">The platforms are made of <span data-var="platformsBounce" data-values="metal wood canvas rubber flubber"
+                class="DragText"></span>. There are <span data-var="platformsCount" class="TKAdjustableNumber" data-min="0" data-max="20"></span>&nbsp;platforms. 
+                The platforms <span data-var="platformsMove" class="TKToggle TKSwitch">
+                    <span>never move</span>
+                    <span>can move when the score is high enough</span>
+                </span>.
+            </span>
+            <div id="controls">
+                <p>
+                    I want to use the <span data-var="controlType" class="TKToggle TKSwitch">
+                        <span>keyboard</span>
+                        <span>mouse</span>
+                    </span> to control the angel.
+                </p>
+                <div data-var="controlInstructions" class="TKSwitch">
+                    <div>
+                        <p>
+                            To use the keyboard:
+                        </p>
+                        <ul>
+                            <li>-> moves the angel to the right.</li>
+                            <li>&lt;- moves the angel to the left.</li>
+                            <li>Spacebar to pause or resume the game.</li>
+                            <li>Spacebar to restart after game over.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        To use the mouse:
+                        
+                <ul>
+                    <li>The angel will follow the mouse pointer to the left or right.</li>
+                    <li>The angel jumps automatically when she lands on a platform.</li>
+                    <li>Spacebar to pause or resume the game.</li>
+                    <li>Spacebar to restart after game over.</li>
+                </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="board.js"> </script>
+    <script src="player.js"></script>
+    <script src="controls.js"> </script>
+    <script src="points.js"> </script>
+    <script src="clouds.js"></script>
+    <script src="platforms.js"></script>
+    <script src="game.js"> </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿<html>
+<head>
+    <title>Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="lib/Tangle-0.1.0/TangleKit/TangleKit.css" rel="stylesheet" />
+    <link href="css/controls.css" rel="stylesheet" />
+
+    <script src="lib/Tangle-0.1.0/Tangle.js"></script>
+    <script src="lib/Tangle-0.1.0/TangleKit/TangleKit.js"></script>
+    <script src="lib/Tangle-0.1.0/TangleKit/mootools.js"></script>
+    <script src="lib/Tangle-0.1.0/TangleKit/BVTouchable.js"></script>
+    <script src="src/tangle-extensions.js"></script>
+
+    <script data-main="src/runner.js" src="lib/requirejs-2.1.8/require.js"></script>
+</head>
+<body>
+    <div class="span12 row-fluid" style="margin-left: 0">
+        <canvas id='c'></canvas>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span8" style="padding: 1%">
+
+            <span id="board">The board is <span id="boardSize" data-var="boardSize" data-values="small medium huge" class="DragText"></span>.
+            </span>
+
+            <span id="player">The angel flies <span data-var="playerAgility" data-values="slowly normally quickly"
+                class="DragText"></span>.
+            </span>
+
+            <span id="platforms">The platforms are made of <span data-var="platformsBounce" data-values="metal wood canvas rubber flubber"
+                class="DragText"></span>. There are <span data-var="platformsCount" class="TKAdjustableNumber" data-min="0" data-max="20"></span>&nbsp;platforms.
+                The platforms <span data-var="platformsMove" class="TKToggle TKSwitch">
+                    <span>never move</span>
+                    <span>can move when the score is high enough</span>
+                </span>.
+                New platforms appear <span data-var="platformsGrouping" data-values="anywhere slightly-shifted mostly-centered mostly-on-left mostly-on-right mostly-on-left&amp;right" class="DragText"></span>.
+            </span>
+        </div>
+    </div>
+    <div class="row-fluid" style="margin-left: 20px">
+        <div class="span12">
+            <button class="btn btn-primary" id="share">Share Game</button>
+
+            <span id="shareKey" class="hidden "></span>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span8" style="padding: 1%" id="controls">
+            To play the game:
+
+                <ul>
+                    <li>The angel will follow the mouse pointer to the left or right.</li>
+                    <li>The angel jumps automatically when she lands on a platform.</li>
+                    <li>Space bar to pause or resume the game.</li>
+                    <li>Space bar to restart after game over.</li>
+                </ul>
+        </div>
+    </div>
+</body>
+</html>
